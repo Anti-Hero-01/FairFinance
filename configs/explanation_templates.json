@@ -1,0 +1,26 @@
+{
+  "loan_denied": [
+    "Your loan was denied because the model found high risk indicators. The strongest negative factors were: {top_negative_features}.",
+    "Based on your financial profile, the system detected concerns such as {top_negative_features}, which reduced your eligibility.",
+    "Your application showed multiple high-impact risk factors including {top_negative_features}."
+  ],
+  "loan_approved": [
+    "Your loan was approved. Your strongest positive indicators were: {top_positive_features}.",
+    "The model identified strong financial stability indicators such as {top_positive_features}.",
+    "Your profile showed favorable signals including: {top_positive_features}, which increased your approval probability."
+  ],
+  "profile_explanation": [
+    "Your current risk category is {risk_category}. The top factors influencing this are {top_global_features}.",
+    "Your financial behavior is primarily shaped by {top_global_features}. This impacts your credit standing.",
+    "The model interprets your financial profile based on trends in {top_global_features}."
+  ],
+  "what_to_improve": [
+    "To improve your credit standing, consider reducing: {improvement_suggestions}.",
+    "Your profile indicates that improving {improvement_suggestions} may increase your eligibility.",
+    "Lowering {improvement_suggestions} can help you qualify for better terms."
+  ],
+  "voice_responses": {
+    "clarify_question": "I understood your question as: {interpreted_query}. Here's the explanation.",
+    "error": "Sorry, I could not process your request. Please try again."
+  }
+}

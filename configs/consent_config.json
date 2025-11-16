@@ -1,0 +1,35 @@
+{
+    "data_categories": {
+      "income": {
+        "description": "Monthly income, salary slips, employer category",
+        "required_for": ["loan_prediction", "profile_explanation"],
+        "default": true
+      },
+      "credit_history": {
+        "description": "Credit score, repayment history, past defaults",
+        "required_for": ["loan_prediction"],
+        "default": true
+      },
+      "transactions": {
+        "description": "Spending patterns, EMI payments, financial behavior",
+        "required_for": ["profile_explanation"],
+        "default": false
+      },
+      "location": {
+        "description": "State, region, address",
+        "required_for": ["fairness_analysis"],
+        "default": false
+      },
+      "demographics": {
+        "description": "Age, gender (optional synthetic attribute)",
+        "required_for": ["bias_detection"],
+        "default": false
+      }
+    },
+    "alert_messages": {
+      "consent_change": "Your data usage preferences have been updated.",
+      "data_usage": "Your data was used for {action}.",
+      "revoked_warning": "Some features may be unavailable due to revoked permissions."
+    }
+  }
+  

@@ -1,0 +1,20 @@
+{
+    "protected_attributes": {
+      "gender": ["male", "female"],
+      "region": ["urban", "rural"],
+      "age_group": ["18-25", "26-40", "40+"]
+    },
+    "metrics": [
+      "demographic_parity_difference",
+      "equal_opportunity_difference",
+      "disparate_impact_ratio",
+      "false_positive_rate",
+      "false_negative_rate"
+    ],
+    "thresholds": {
+      "demographic_parity_difference": 0.1,
+      "equal_opportunity_difference": 0.1,
+      "disparate_impact_ratio": 0.8
+    }
+  }
+  
