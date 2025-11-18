@@ -79,7 +79,17 @@ const VoiceAssistant = () => {
       }
 
       mediaRecorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' })
+        // Use the actual mimeType that was selected, not hard-coded 'audio/webm'
+        const audioBlob = new Blob(audioChunksRef.current, { type: mimeType })
+        console.debug('[VoiceAssistant] Recording stopped', {
+          mimeType: mimeType,
+          blobSize: audioBlob.size,
+          chunks: audioChunksRef.current.length
+        })
+        
+        // Wait 200ms to ensure all data is flushed to blob
+        await new Promise(resolve => setTimeout(resolve, 200))
+        
         await processAudio(audioBlob)
         
         // Stop all tracks
@@ -114,6 +124,25 @@ const VoiceAssistant = () => {
       reader.onloadend = async () => {
         const base64Audio = reader.result.split(',')[1] // Remove data:audio/webm;base64, prefix
         
+        // Validate audio: check minimum length to ensure we have real audio data
+        if (!base64Audio || base64Audio.length < 5000) {
+          const errorMsg = 'Recording too short. Please record at least 1-2 seconds of audio.'
+          console.warn('[VoiceAssistant] Audio validation failed:', {
+            base64Length: base64Audio?.length || 0,
+            minRequired: 5000
+          })
+          setError(errorMsg)
+          setLoading(false)
+          toast.error(errorMsg)
+          return
+        }
+        
+        console.debug('[VoiceAssistant] Audio ready to send', {
+          base64Length: base64Audio.length,
+          language: language,
+          userId: user?.id
+        })
+        
         try {
           const result = await voiceService.processQuery(
             base64Audio,
@@ -122,19 +151,41 @@ const VoiceAssistant = () => {
             user?.id
           )
           
-          console.log('Voice query result:', result)
+          console.log('Voice query result:', JSON.stringify(result, null, 2))
           
           if (result) {
+            console.debug('[VoiceAssistant] Response fields:', {
+              hasResponseText: !!result.response_text,
+              hasInterpretedQuery: !!result.interpreted_query,
+              hasResponseAudio: !!result.response_audio,
+              hasExplanationData: !!result.explanation_data,
+              resultKeys: Object.keys(result)
+            })
+            
+            // Check if transcription failed
+            if (result.interpreted_query?.includes('Could not understand audio') || 
+                result.interpreted_query?.includes('Error processing audio') ||
+                result.interpreted_query?.includes('Error with speech recognition')) {
+              console.warn('[VoiceAssistant] Audio transcription failed:', result.interpreted_query)
+              setError(`Transcription failed: ${result.interpreted_query}. Try speaking more clearly or check backend logs.`)
+              toast.error('Audio transcription failed. Check console for details.')
+              setLoading(false)
+              return
+            }
+            
             setResponse(result)
             
             // If TTS audio is available, play it
             if (result.response_audio) {
+              console.debug('[VoiceAssistant] Playing TTS audio')
               playAudio(result.response_audio)
             }
             
             // Show success message if we got a response
             if (result.response_text) {
               toast.success('Voice query processed successfully')
+            } else {
+              console.warn('[VoiceAssistant] No response_text in result')
             }
           } else {
             setError('No response received from voice assistant')

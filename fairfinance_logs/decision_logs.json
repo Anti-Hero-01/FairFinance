@@ -1,0 +1,1887 @@
+[
+  {
+    "application_id": 8,
+    "user_id": 5,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:17:15.610544",
+    "id": "8_1763369235"
+  },
+  {
+    "application_id": 9,
+    "user_id": 6,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:30:41.530540",
+    "id": "9_1763370041"
+  },
+  {
+    "application_id": 10,
+    "user_id": 7,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:30:41.757392",
+    "id": "10_1763370041"
+  },
+  {
+    "application_id": 11,
+    "user_id": 8,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:30:42.005764",
+    "id": "11_1763370042"
+  },
+  {
+    "application_id": 12,
+    "user_id": 5,
+    "prediction": true,
+    "probability": 0.9996647988983725,
+    "model_version": "1.0",
+    "features": {
+      "age": 35,
+      "credit_score": 750,
+      "loan_amount": 2000.0,
+      "employment_years": 3,
+      "debt_to_income": 0.15,
+      "credit_history_length": 8,
+      "number_of_accounts": 4,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 35.00",
+          "feature_1 approx 6000.00",
+          "feature_2 approx 750.00",
+          "feature_3 approx 2000.00",
+          "feature_4 approx 3.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:30:42.451683",
+    "id": "12_1763370042"
+  },
+  {
+    "application_id": 13,
+    "user_id": 6,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:31:59.008452",
+    "id": "13_1763370119"
+  },
+  {
+    "application_id": 14,
+    "user_id": 7,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:31:59.230519",
+    "id": "14_1763370119"
+  },
+  {
+    "application_id": 15,
+    "user_id": 8,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:31:59.455046",
+    "id": "15_1763370119"
+  },
+  {
+    "application_id": 16,
+    "user_id": 5,
+    "prediction": true,
+    "probability": 0.9996647988983725,
+    "model_version": "1.0",
+    "features": {
+      "age": 35,
+      "credit_score": 750,
+      "loan_amount": 2000.0,
+      "employment_years": 3,
+      "debt_to_income": 0.15,
+      "credit_history_length": 8,
+      "number_of_accounts": 4,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 35.00",
+          "feature_1 approx 6000.00",
+          "feature_2 approx 750.00",
+          "feature_3 approx 2000.00",
+          "feature_4 approx 3.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:31:59.889158",
+    "id": "16_1763370119"
+  },
+  {
+    "application_id": 17,
+    "user_id": 6,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:32:14.030663",
+    "id": "17_1763370134"
+  },
+  {
+    "application_id": 18,
+    "user_id": 7,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:32:14.258556",
+    "id": "18_1763370134"
+  },
+  {
+    "application_id": 19,
+    "user_id": 8,
+    "prediction": true,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {
+      "age": 30,
+      "credit_score": 700,
+      "loan_amount": 1000.0,
+      "employment_years": 2,
+      "debt_to_income": 0.2,
+      "credit_history_length": 5,
+      "number_of_accounts": 3,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 30.00",
+          "feature_1 approx 5000.00",
+          "feature_2 approx 700.00",
+          "feature_3 approx 1000.00",
+          "feature_4 approx 2.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:32:14.484788",
+    "id": "19_1763370134"
+  },
+  {
+    "application_id": 20,
+    "user_id": 5,
+    "prediction": true,
+    "probability": 0.9996647988983725,
+    "model_version": "1.0",
+    "features": {
+      "age": 35,
+      "credit_score": 750,
+      "loan_amount": 2000.0,
+      "employment_years": 3,
+      "debt_to_income": 0.15,
+      "credit_history_length": 8,
+      "number_of_accounts": 4,
+      "defaults": 0
+    },
+    "explanation": {
+      "shap_explanation": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      },
+      "ethical_twin_explanation": {
+        "prediction": 1,
+        "probability": 0.6,
+        "rules": [
+          "feature_0 approx 35.00",
+          "feature_1 approx 6000.00",
+          "feature_2 approx 750.00",
+          "feature_3 approx 2000.00",
+          "feature_4 approx 3.00"
+        ],
+        "leaf_node": 0
+      },
+      "top_features": {
+        "top_positive": [
+          {
+            "feature": "feature_0",
+            "value": null,
+            "contribution": 0.5
+          },
+          {
+            "feature": "feature_1",
+            "value": null,
+            "contribution": 0.46
+          },
+          {
+            "feature": "feature_2",
+            "value": null,
+            "contribution": 0.42
+          },
+          {
+            "feature": "feature_3",
+            "value": null,
+            "contribution": 0.38
+          },
+          {
+            "feature": "feature_4",
+            "value": null,
+            "contribution": 0.33999999999999997
+          }
+        ],
+        "top_negative": [
+          {
+            "feature": "feature_10",
+            "value": null,
+            "contribution": 0.1
+          },
+          {
+            "feature": "feature_9",
+            "value": null,
+            "contribution": 0.14
+          },
+          {
+            "feature": "feature_8",
+            "value": null,
+            "contribution": 0.18
+          },
+          {
+            "feature": "feature_7",
+            "value": null,
+            "contribution": 0.21999999999999997
+          },
+          {
+            "feature": "feature_6",
+            "value": null,
+            "contribution": 0.26
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-11-17T14:32:14.925485",
+    "id": "20_1763370134"
+  }
+]

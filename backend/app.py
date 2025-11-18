@@ -14,6 +14,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backend.config.settings import settings
 from backend.models.database import init_db
+from backend.models.database import SessionLocal, User
+from backend import create_test_users
 from backend.routers import auth, predictions, explanations, consent, governance, voice
 
 @asynccontextmanager
@@ -23,6 +25,17 @@ async def lifespan(app: FastAPI):
     print("Starting FairFinance API...")
     init_db()
     print("Database initialized")
+    # Auto-create test users in debug mode if no users exist
+    try:
+        if settings.DEBUG:
+            # Create test users (create_test_users skips users that already exist)
+            try:
+                print("Ensuring test users exist (DEBUG mode)")
+                create_test_users.create_test_users()
+            except Exception as e:
+                print(f"Failed to create test users on startup: {e}")
+    except Exception as e:
+        print(f"Error checking/creating test users: {e}")
     yield
     # Shutdown
     print("Shutting down FairFinance API...")

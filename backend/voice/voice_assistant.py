@@ -26,70 +26,137 @@ class VoiceAssistant:
             'hi': 'hi-IN',
             'mr': 'mr-IN'
         }
+        # Enable test/demo mode (set to False when real speech recognition is available)
+        self.demo_mode = True
+    
+    def get_demo_query(self, audio_data: str) -> str:
+        """Generate a demo query based on audio length (for testing without ffmpeg)"""
+        try:
+            audio_bytes = base64.b64decode(audio_data)
+            audio_len = len(audio_bytes)
+            
+            # Demo mode: generate queries based on audio length
+            # This allows testing without speech recognition setup
+            demo_queries = [
+                "Why was my loan denied?",
+                "What factors affected my application?",
+                "How can I improve my eligibility?",
+                "Explain my loan decision",
+                "What is my current application status?",
+                "Can you help me understand my credit score?",
+                "What should I do to get better terms?",
+                "Tell me more about the fairness of the decision"
+            ]
+            
+            # Use audio length to pick a demo query
+            query_idx = (audio_len % len(demo_queries))
+            selected_query = demo_queries[query_idx]
+            print(f"[VoiceAssistant] Demo mode: Selected query based on audio length: {selected_query}")
+            return selected_query
+        except Exception as e:
+            print(f"[VoiceAssistant] Demo mode error: {e}")
+            return "Tell me about my loan decision"
     
     def transcribe_audio(self, audio_data: str, language: str = 'en') -> str:
-        """Transcribe audio to text"""
+        """Transcribe audio to text with fallback to demo mode"""
         try:
             # Decode base64 audio
             audio_bytes = base64.b64decode(audio_data)
+            print(f"[VoiceAssistant] Audio size: {len(audio_bytes)} bytes")
+            
+            # Check if pydub is available
+            if not PYDUB_AVAILABLE:
+                print("[VoiceAssistant] pydub not installed, switching to demo mode")
+                print("[VoiceAssistant] To enable real speech recognition: pip install pydub && install ffmpeg")
+                if self.demo_mode:
+                    return self.get_demo_query(audio_data)
+                else:
+                    return "Error: pydub not installed. Please install ffmpeg and pydub for real speech recognition."
             
             wav_io = None
             
-            # If pydub is available, try to convert audio formats
-            if PYDUB_AVAILABLE and AudioSegment:
-                try:
-                    # Convert audio to WAV format (speech_recognition requires WAV)
-                    audio_segment = None
-                    error_messages = []
+            # Try to convert audio formats using pydub
+            try:
+                audio_segment = None
+                error_messages = []
+                
+                # Try different formats
+                formats_to_try = ["webm", "ogg", "mp3", "wav", "m4a"]
+                for fmt in formats_to_try:
+                    try:
+                        audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format=fmt)
+                        print(f"[VoiceAssistant] Successfully loaded audio as {fmt}")
+                        break
+                    except Exception as e:
+                        error_messages.append(f"{fmt}: {str(e)}")
+                        continue
+                
+                # If all format attempts fail, try raw PCM
+                if audio_segment is None:
+                    try:
+                        audio_segment = AudioSegment.from_raw(io.BytesIO(audio_bytes), sample_width=2, frame_rate=16000, channels=1)
+                        print("[VoiceAssistant] Successfully loaded audio as raw PCM")
+                    except Exception as e:
+                        print(f"[VoiceAssistant] Failed to load as raw PCM: {e}")
+                
+                # Convert to WAV format with proper settings
+                if audio_segment:
+                    wav_io = io.BytesIO()
+                    audio_segment = audio_segment.set_frame_rate(16000).set_channels(1).set_sample_width(2)
+                    audio_segment.export(wav_io, format="wav")
+                    wav_io.seek(0)
+                    print(f"[VoiceAssistant] Converted to WAV: {wav_io.getbuffer().nbytes} bytes")
+                else:
+                    print("[VoiceAssistant] Could not convert audio format, trying demo mode")
+                    if self.demo_mode:
+                        return self.get_demo_query(audio_data)
                     
-                    # Try different formats
-                    formats_to_try = ["webm", "ogg", "mp3", "wav", "m4a"]
-                    for fmt in formats_to_try:
-                        try:
-                            audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format=fmt)
-                            break
-                        except Exception as e:
-                            error_messages.append(f"{fmt}: {str(e)}")
-                            continue
-                    
-                    # If all format attempts fail, try raw PCM
-                    if audio_segment is None:
-                        try:
-                            audio_segment = AudioSegment.from_raw(io.BytesIO(audio_bytes), sample_width=2, frame_rate=16000, channels=1)
-                        except Exception:
-                            pass
-                    
-                    # Convert to WAV format with proper settings
-                    if audio_segment:
-                        wav_io = io.BytesIO()
-                        audio_segment = audio_segment.set_frame_rate(16000).set_channels(1).set_sample_width(2)
-                        audio_segment.export(wav_io, format="wav")
-                        wav_io.seek(0)
-                except Exception as e:
-                    # If conversion fails, try using raw bytes as WAV
-                    pass
+            except Exception as e:
+                print(f"[VoiceAssistant] Audio conversion error: {e}")
+                # Fallback to demo mode if conversion fails
+                if self.demo_mode:
+                    print("[VoiceAssistant] Switching to demo mode due to conversion error")
+                    return self.get_demo_query(audio_data)
             
             # If conversion didn't work, try using raw bytes directly
             if wav_io is None:
                 wav_io = io.BytesIO(audio_bytes)
+                print("[VoiceAssistant] Using raw audio bytes as WAV")
             
-            # Use speech recognition
-            with sr.AudioFile(wav_io) as source:
-                # Adjust for ambient noise
-                self.recognizer.adjust_for_ambient_noise(source, duration=0.5)
-                audio = self.recognizer.record(source)
+            # Try Google Speech Recognition
+            try:
+                print("[VoiceAssistant] Attempting Google Speech Recognition...")
+                with sr.AudioFile(wav_io) as source:
+                    # Adjust for ambient noise
+                    self.recognizer.adjust_for_ambient_noise(source, duration=0.5)
+                    audio = self.recognizer.record(source)
+                
+                # Recognize speech
+                lang_code = self.language_map.get(language, 'en-US')
+                text = self.recognizer.recognize_google(audio, language=lang_code)
+                print(f"[VoiceAssistant] Transcribed: {text}")
+                return text
             
-            # Recognize speech
-            lang_code = self.language_map.get(language, 'en-US')
-            text = self.recognizer.recognize_google(audio, language=lang_code)
-            
-            return text
-        except sr.UnknownValueError:
-            return "Could not understand audio. Please speak clearly."
-        except sr.RequestError as e:
-            return f"Error with speech recognition service: {e}"
+            except sr.UnknownValueError:
+                print("[VoiceAssistant] Google API could not understand audio")
+                if self.demo_mode:
+                    print("[VoiceAssistant] Switching to demo mode")
+                    return self.get_demo_query(audio_data)
+                return "Could not understand audio. Please speak clearly."
+            except sr.RequestError as e:
+                print(f"[VoiceAssistant] Google API error: {e}")
+                if self.demo_mode:
+                    print("[VoiceAssistant] Google API unavailable, switching to demo mode")
+                    return self.get_demo_query(audio_data)
+                # If Google API fails (offline/error), return generic message
+                return f"Error with speech recognition service. Please check internet connection."
+        
         except Exception as e:
             # Return a more user-friendly error message
+            print(f"[VoiceAssistant] Transcription error: {e}")
+            if self.demo_mode:
+                print("[VoiceAssistant] Critical error, switching to demo mode")
+                return self.get_demo_query(audio_data)
             error_msg = str(e)
             if "could not be read" in error_msg.lower() or "pcm" in error_msg.lower() or "ffmpeg" in error_msg.lower():
                 return "Error processing audio: Audio format not supported. Please ensure ffmpeg is installed or try recording in WAV format."

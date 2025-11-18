@@ -1,6 +1,11 @@
 import api from './api'
 
 export const governanceService = {
+  async getDecisionLogs() {
+    const response = await api.get(`/governance/decision-logs`)
+    return response.data
+  },
+
   async getDecisionLog(userId) {
     const response = await api.get(`/governance/decision-log/${userId}`)
     return response.data

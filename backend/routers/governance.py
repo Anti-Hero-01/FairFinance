@@ -20,13 +20,52 @@ from backend.services.fairness_service import fairness_service
 
 router = APIRouter(prefix="/governance", tags=["governance"])
 
+@router.get("/decision-logs", response_model=List[DecisionLogEntry])
+def get_all_decision_logs(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db),
+    limit: int = 100
+):
+    """Get ALL decision logs (Auditor/Admin only) or own logs (User)"""
+    if current_user.role == "user":
+        # Users view their own logs
+        if not has_permission(current_user, Permission.VIEW_OWN_LOGS):
+            raise HTTPException(status_code=403, detail="Insufficient permissions")
+        actual_user_id = current_user.id
+    else:
+        # Admins and auditors can view all logs
+        if not has_permission(current_user, Permission.VIEW_ALL_LOGS):
+            raise HTTPException(status_code=403, detail="Insufficient permissions")
+        actual_user_id = None  # None = all logs
+    
+    # Get logs from JSON storage
+    logs = mongodb_client.get_decision_logs(user_id=actual_user_id, limit=limit)
+    
+    # Convert to response format
+    decision_logs = []
+    for log in logs:
+        decision_logs.append(DecisionLogEntry(
+            application_id=log.get('application_id'),
+            user_id=log.get('user_id'),
+            prediction=log.get('prediction'),
+            probability=log.get('probability'),
+            model_version=log.get('model_version', '1.0'),
+            timestamp=log.get('timestamp'),
+            features=log.get('features', {}),
+            explanation=log.get('explanation'),
+            admin_override=log.get('admin_override', False),
+            override_reason=log.get('override_reason')
+        ))
+    
+    return decision_logs
+
 @router.get("/decision-log/{user_id}", response_model=List[DecisionLogEntry])
 def get_decision_log(
     user_id: int,
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Get decision log for a user (Own for User, All for Auditor/Admin)"""
+    """Get decision log for a specific user (Own for User, Any for Auditor/Admin)"""
     # Users can only view their own logs
     if current_user.role == "user":
         if user_id != current_user.id:

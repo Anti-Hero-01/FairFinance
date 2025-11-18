@@ -24,16 +24,22 @@ const GovernanceDashboard = () => {
   const [overrideDecision, setOverrideDecision] = useState(true)
 
   useEffect(() => {
-    loadData()
-  }, [])
+    // Wait until auth has loaded user info before fetching governance data
+    if (user) {
+      loadData()
+    }
+  }, [user])
 
   const loadData = async (userId = null) => {
     try {
       setLoading(true)
-      const logUserId = userId || (user.role === 'user' ? user.id : null)
+      // For users: fetch own logs; for admin/auditor: fetch all logs
+      const shouldFetchOwnOnly = user.role === 'user'
       const [report, logs] = await Promise.all([
         governanceService.getFairnessReport().catch(() => null),
-        logUserId ? governanceService.getDecisionLog(logUserId).catch(() => []) : []
+        shouldFetchOwnOnly 
+          ? governanceService.getDecisionLog(user.id).catch(() => [])
+          : governanceService.getDecisionLogs().catch(() => [])
       ])
       setFairnessReport(report)
       setDecisionLogs(logs || [])

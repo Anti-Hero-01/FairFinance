@@ -12,6 +12,7 @@ from backend.services.ml_service import ml_service
 from backend.services.explanation_service import explanation_service
 from backend.services.consent_service import consent_service
 from backend.services.permissions import Permission, require_own_resource_or_permission, require_permission
+from numbers import Number
 
 router = APIRouter(prefix="/explain", tags=["explanations"])
 
@@ -73,16 +74,16 @@ def explain_application(
     top_positive_features = [
         FeatureContribution(
             feature=f.get('feature', ''),
-            value=f.get('value', 0),
-            contribution=f.get('contribution', 0)
+            value=(f.get('value') if isinstance(f.get('value'), Number) else 0.0),
+            contribution=(float(f.get('contribution')) if isinstance(f.get('contribution'), Number) else 0.0)
         ) for f in top_pos
     ]
     
     top_negative_features = [
         FeatureContribution(
             feature=f.get('feature', ''),
-            value=f.get('value', 0),
-            contribution=f.get('contribution', 0)
+            value=(f.get('value') if isinstance(f.get('value'), Number) else 0.0),
+            contribution=(float(f.get('contribution')) if isinstance(f.get('contribution'), Number) else 0.0)
         ) for f in top_neg
     ]
     
@@ -90,7 +91,8 @@ def explain_application(
     shap_values = {}
     for f in top_pos + top_neg:
         if isinstance(f, dict) and 'feature' in f:
-            shap_values[f['feature']] = f.get('contribution', 0)
+            contrib = f.get('contribution')
+            shap_values[f['feature']] = float(contrib) if isinstance(contrib, Number) else 0.0
     
     return ExplanationResponse(
         application_id=application.id,
@@ -143,8 +145,8 @@ def explain_profile(
     top_global_features = [
         FeatureContribution(
             feature=f.get('feature', ''),
-            value=0,
-            contribution=f.get('contribution', f.get('importance', 0))  # Support both 'contribution' and 'importance'
+            value=0.0,
+            contribution=(f.get('contribution') if isinstance(f.get('contribution'), Number) else f.get('importance', 0.0))
         ) for f in profile_exp.get('top_global_features', [])
     ]
     

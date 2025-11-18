@@ -12,6 +12,7 @@ from backend.services.auth import (
     get_current_active_user
 )
 from backend.config.settings import settings
+from backend import create_test_users
 
 router = APIRouter(prefix="/auth", tags=["authentication"])
 
@@ -71,4 +72,17 @@ def login(user_data: UserLogin, db: Session = Depends(get_db)):
 def get_current_user_info(current_user: User = Depends(get_current_active_user)):
     """Get current user information"""
     return current_user
+
+
+@router.post("/create-test-users")
+def create_test_users_endpoint():
+    """Dev-only endpoint to create test users when DEBUG is enabled."""
+    if not settings.DEBUG:
+        raise HTTPException(status_code=403, detail="Not allowed")
+
+    try:
+        create_test_users.create_test_users()
+        return {"created": True}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
