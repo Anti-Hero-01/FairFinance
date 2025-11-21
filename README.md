@@ -320,15 +320,8 @@ End-to-end ML pipeline
 
 Synthetic bias injection
 
-Fairness metrics evaluation
-
 Model training workflow
 
----
-
-📁 Project Structure
-
-(Kept exactly as your original — unchanged.)
 
 ---
 
