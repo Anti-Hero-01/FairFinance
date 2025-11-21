@@ -9,6 +9,7 @@ from typing import Dict, Any, Optional, List
 from backend.config.settings import settings
 from ml.shap_utils import SHAPExplainer
 from ml.ethical_twin import EthicalTwin
+from ml.feature_map import FEATURE_NAME_MAP
 import math
 
 class MLService:
@@ -43,7 +44,9 @@ class MLService:
             with open(settings.FEATURE_NAMES_PATH, 'rb') as f:
                 self.feature_names = pickle.load(f)
         except Exception:
-            print("Feature names not found")
+            print("Feature names not found; using friendly FEATURE_NAME_MAP")
+            # Use friendly feature names as a fallback
+            self.feature_names = FEATURE_NAME_MAP
 
         # Load ethical twin
         try:
@@ -74,7 +77,15 @@ class MLService:
     
     def prepare_features(self, application_data: Dict[str, Any]) -> np.ndarray:
         """Prepare features for prediction"""
-        # Create feature vector
+        # Accept both legacy/internal keys and user-friendly keys by mapping
+        if 'monthly_income' in application_data and 'income' not in application_data:
+            application_data['income'] = application_data.get('monthly_income')
+        if 'debt_to_income_ratio' in application_data and 'debt_to_income' not in application_data:
+            application_data['debt_to_income'] = application_data.get('debt_to_income_ratio')
+        if 'number_of_defaults' in application_data and 'defaults' not in application_data:
+            application_data['defaults'] = application_data.get('number_of_defaults')
+
+        # Create feature vector using internal keys expected by model/preprocessor
         feature_dict = {
             'age': application_data.get('age', 0),
             'income': application_data.get('income', 0),
@@ -219,7 +230,8 @@ class DummySHAPExplainer:
         row = shap_values[instance_idx]
         # Build feature names if missing
         if not self.feature_names:
-            self.feature_names = [f'feature_{i}' for i in range(len(row))]
+            from ml.feature_map import FEATURE_NAME_MAP as _FM
+            self.feature_names = _FM[:len(row)]
 
         df = pd.DataFrame({'feature': self.feature_names, 'shap_value': row})
         top_pos = df.nlargest(top_n, 'shap_value').to_dict('records')
@@ -241,7 +253,7 @@ class DummyEthicalTwin:
 
     def explain_decision(self, instance, feature_names=None):
         if feature_names is None:
-            feature_names = self.feature_names or [f'feature_{i}' for i in range(len(instance))]
+            feature_names = self.feature_names or FEATURE_NAME_MAP[:len(instance)]
         rules = []
         for i, v in enumerate(instance[:5]):
             rules.append(f"{feature_names[i]} approx {float(v):.2f}")

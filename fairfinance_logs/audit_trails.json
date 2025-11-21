@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "action": "admin_override",
+    "user_id": 10,
+    "user_role": "admin",
+    "application_id": 8,
+    "old_decision": false,
+    "new_decision": false,
+    "reason": "low credit scsore",
+    "action_type": "approved",
+    "timestamp": "2025-11-18T15:23:55.755364",
+    "id": "audit_1763459635"
+  }
+]

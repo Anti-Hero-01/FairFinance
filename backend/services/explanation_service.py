@@ -107,7 +107,7 @@ class ExplanationService:
         
         # Generate improvement suggestions
         negative_features = [f['feature'] for f in top_global if f.get('contribution', 0) < 0][:3]
-        improvement_suggestions = negative_features if negative_features else ['credit_score', 'debt_to_income']
+        improvement_suggestions = negative_features if negative_features else ['credit_score', 'debt_to_income_ratio']
         
         # Generate explanation text
         template = random.choice(self.templates.get('profile_explanation', ['Your profile analysis.']))

@@ -9,6 +9,7 @@ from sklearn.tree import DecisionTreeClassifier, export_text, plot_tree
 import pickle
 import os
 import matplotlib.pyplot as plt
+from ml.feature_map import FEATURE_NAME_MAP
 
 class EthicalTwin:
     def __init__(self, max_depth=5, min_samples_split=20, min_samples_leaf=10):
@@ -40,7 +41,7 @@ class EthicalTwin:
     def explain_decision(self, instance, feature_names=None):
         """Explain a single decision using tree path"""
         if feature_names is None:
-            feature_names = self.feature_names or [f'feature_{i}' for i in range(len(instance))]
+            feature_names = self.feature_names or FEATURE_NAME_MAP[:len(instance)]
         
         # Get decision path
         decision_path = self.model.decision_path([instance])
@@ -86,7 +87,7 @@ class EthicalTwin:
     def get_global_explanation(self, feature_names=None):
         """Get global explanation of the model"""
         if feature_names is None:
-            feature_names = self.feature_names or [f'feature_{i}' for i in range(self.model.n_features_in_)]
+            feature_names = self.feature_names or FEATURE_NAME_MAP[:self.model.n_features_in_]
         
         # Get feature importances
         importances = self.model.feature_importances_
@@ -112,7 +113,7 @@ class EthicalTwin:
     def visualize_tree(self, feature_names=None, output_path='docs/ethical_twin_tree.png'):
         """Visualize decision tree"""
         if feature_names is None:
-            feature_names = self.feature_names or [f'feature_{i}' for i in range(self.model.n_features_in_)]
+            feature_names = self.feature_names or FEATURE_NAME_MAP[:self.model.n_features_in_]
         
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
@@ -171,7 +172,7 @@ if __name__ == '__main__':
     
     # Create sample data
     X, y = make_classification(n_samples=200, n_features=5, random_state=42)
-    feature_names = [f'feature_{i}' for i in range(5)]
+    feature_names = FEATURE_NAME_MAP[:X.shape[1]]
     
     # Train black box model
     black_box = RandomForestClassifier(n_estimators=10, random_state=42)

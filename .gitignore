@@ -1,5 +1,5 @@
-# Python
-__pycache__/
+Python
+pycache/
 *.py[cod]
 *$py.class
 *.so
@@ -16,66 +16,83 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 venv/
 env/
 ENV/
+env.bak/
+venv.bak/
 
-# Node
+Machine Learning
+*.pkl
+*.h5
+*.hdf5
+*.joblib
+*.model
+ml/model.pkl
+ml/ethical_twin.pkl
+ml/shap_explainer.pkl
+ml/preprocessor.pkl
+ml/feature_names.pkl
+ml/logistic_regression.pkl
+ml/xgboost.pkl
+
+Node
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
 .pnpm-debug.log*
+dist/
+dist-ssr/
+*.local
 
-# IDEs
+Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
+*.swn
+.DS_Store
 
-# Environment
-.env
-.env.local
-.env.*.local
-
-# ML Models
-ml/*.pkl
-ml/*.pth
-ml/*.h5
-ml/models/
-ml/checkpoints/
-
-# Logs
+Logs
 *.log
 logs/
 
-# Database
+Database
 *.db
 *.sqlite
 *.sqlite3
 
-# OS
-.DS_Store
-Thumbs.db
+Testing
+.coverage
+.pytest_cache/
+htmlcov/
+coverage/
 
-# Docker
+Docker
 .dockerignore
 
-# Coverage
-.coverage
-htmlcov/
-.pytest_cache/
+OS
+Thumbs.db
+.DS_Store
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
+Generated Documentation
+docs/fairness_report.md
 
-# Temporary files
+Temporary Files
 *.tmp
-*.temp
-.cache/
-
+*.bak
+*.cache

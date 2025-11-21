@@ -13,6 +13,7 @@ try:
 except ImportError:
     SHAP_AVAILABLE = False
     print("Warning: SHAP not available. Install with: pip install shap")
+from ml.feature_map import FEATURE_NAME_MAP
 
 class SHAPExplainer:
     def __init__(self, model, feature_names=None):
@@ -162,7 +163,7 @@ if __name__ == '__main__':
     
     # Create sample data
     X, y = make_classification(n_samples=100, n_features=10, random_state=42)
-    feature_names = [f'feature_{i}' for i in range(10)]
+    feature_names = FEATURE_NAME_MAP[:X.shape[1]]
     
     # Train model
     model = RandomForestClassifier(n_estimators=10, random_state=42)

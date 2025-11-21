@@ -10,63 +10,66 @@
       "credit_score": 700,
       "loan_amount": 1000.0,
       "employment_years": 2,
-      "debt_to_income": 0.2,
+      "debt_to_income_ratio": 0.2,
       "credit_history_length": 5,
       "number_of_accounts": 3,
-      "defaults": 0
+      "number_of_defaults": 0,
+      "region": "unknown",
+      "gender": "unknown",
+      "monthly_income": 0
     },
     "explanation": {
       "shap_explanation": {
         "top_positive": [
           {
-            "feature": "feature_0",
+            "feature": "age",
             "value": null,
             "contribution": 0.5
           },
           {
-            "feature": "feature_1",
+            "feature": "monthly_income",
             "value": null,
             "contribution": 0.46
           },
           {
-            "feature": "feature_2",
+            "feature": "credit_score",
             "value": null,
             "contribution": 0.42
           },
           {
-            "feature": "feature_3",
+            "feature": "employment_years",
             "value": null,
             "contribution": 0.38
           },
           {
-            "feature": "feature_4",
+            "feature": "credit_history_length",
             "value": null,
             "contribution": 0.33999999999999997
           }
         ],
         "top_negative": [
           {
-            "feature": "feature_10",
+            "feature": "gender",
             "value": null,
             "contribution": 0.1
           },
           {
-            "feature": "feature_9",
+            "feature": "region",
             "value": null,
             "contribution": 0.14
           },
           {
-            "feature": "feature_8",
+            "feature": "loan_amount",
             "value": null,
             "contribution": 0.18
           },
           {
-            "feature": "feature_7",
+            "feature": "number_of_defaults",
             "value": null,
             "contribution": 0.21999999999999997
           },
           {
-            "feature": "feature_6",
+            "feature": "number_of_accounts",
             "value": null,
             "contribution": 0.26
           }
@@ -76,65 +79,65 @@
         "prediction": 1,
         "probability": 0.6,
         "rules": [
-          "feature_0 approx 30.00",
-          "feature_1 approx 5000.00",
-          "feature_2 approx 700.00",
-          "feature_3 approx 1000.00",
-          "feature_4 approx 2.00"
+          "age approx 30.00",
+          "monthly_income approx 5000.00",
+          "credit_score approx 700.00",
+          "employment_years approx 1000.00",
+          "credit_history_length approx 2.00"
         ],
         "leaf_node": 0
       },
       "top_features": {
         "top_positive": [
           {
-            "feature": "feature_0",
+            "feature": "age",
             "value": null,
             "contribution": 0.5
           },
           {
-            "feature": "feature_1",
+            "feature": "monthly_income",
             "value": null,
             "contribution": 0.46
           },
           {
-            "feature": "feature_2",
+            "feature": "credit_score",
             "value": null,
             "contribution": 0.42
           },
           {
-            "feature": "feature_3",
+            "feature": "employment_years",
             "value": null,
             "contribution": 0.38
           },
           {
-            "feature": "feature_4",
+            "feature": "credit_history_length",
             "value": null,
             "contribution": 0.33999999999999997
           }
         ],
         "top_negative": [
           {
-            "feature": "feature_10",
+            "feature": "gender",
             "value": null,
             "contribution": 0.1
           },
           {
-            "feature": "feature_9",
+            "feature": "region",
             "value": null,
             "contribution": 0.14
           },
           {
-            "feature": "feature_8",
+            "feature": "loan_amount",
             "value": null,
             "contribution": 0.18
           },
           {
-            "feature": "feature_7",
+            "feature": "number_of_defaults",
             "value": null,
             "contribution": 0.21999999999999997
           },
           {
-            "feature": "feature_6",
+            "feature": "number_of_accounts",
             "value": null,
             "contribution": 0.26
           }
@@ -155,63 +158,66 @@
       "credit_score": 700,
       "loan_amount": 1000.0,
       "employment_years": 2,
-      "debt_to_income": 0.2,
+      "debt_to_income_ratio": 0.2,
       "credit_history_length": 5,
       "number_of_accounts": 3,
-      "defaults": 0
+      "number_of_defaults": 0,
+      "region": "unknown",
+      "gender": "unknown",
+      "monthly_income": 0
     },
     "explanation": {
       "shap_explanation": {
         "top_positive": [
           {
-            "feature": "feature_0",
+            "feature": "age",
             "value": null,
             "contribution": 0.5
           },
           {
-            "feature": "feature_1",
+            "feature": "monthly_income",
             "value": null,
             "contribution": 0.46
           },
           {
-            "feature": "feature_2",
+            "feature": "credit_score",
             "value": null,
             "contribution": 0.42
           },
           {
-            "feature": "feature_3",
+            "feature": "employment_years",
             "value": null,
             "contribution": 0.38
           },
           {
-            "feature": "feature_4",
+            "feature": "credit_history_length",
             "value": null,
             "contribution": 0.33999999999999997
           }
         ],
         "top_negative": [
           {
-            "feature": "feature_10",
+            "feature": "gender",
             "value": null,
             "contribution": 0.1
           },
           {
-            "feature": "feature_9",
+            "feature": "region",
             "value": null,
             "contribution": 0.14
           },
           {
-            "feature": "feature_8",
+            "feature": "loan_amount",
             "value": null,
             "contribution": 0.18
           },
           {
-            "feature": "feature_7",
+            "feature": "number_of_defaults",
             "value": null,
             "contribution": 0.21999999999999997
           },
           {
-            "feature": "feature_6",
+            "feature": "number_of_accounts",
             "value": null,
             "contribution": 0.26
           }
@@ -221,65 +227,65 @@
         "prediction": 1,
         "probability": 0.6,
         "rules": [
-          "feature_0 approx 30.00",
-          "feature_1 approx 5000.00",
-          "feature_2 approx 700.00",
-          "feature_3 approx 1000.00",
-          "feature_4 approx 2.00"
+          "age approx 30.00",
+          "monthly_income approx 5000.00",
+          "credit_score approx 700.00",
+          "employment_years approx 1000.00",
+          "credit_history_length approx 2.00"
         ],
         "leaf_node": 0
       },
       "top_features": {
         "top_positive": [
           {
-            "feature": "feature_0",
+            "feature": "age",
             "value": null,
             "contribution": 0.5
           },
           {
-            "feature": "feature_1",
+            "feature": "monthly_income",
             "value": null,
             "contribution": 0.46
           },
           {
-            "feature": "feature_2",
+            "feature": "credit_score",
             "value": null,
             "contribution": 0.42
           },
           {
-            "feature": "feature_3",
+            "feature": "employment_years",
             "value": null,
             "contribution": 0.38
           },
           {
-            "feature": "feature_4",
+            "feature": "credit_history_length",
             "value": null,
             "contribution": 0.33999999999999997
           }
         ],
         "top_negative": [
           {
-            "feature": "feature_10",
+            "feature": "gender",
             "value": null,
             "contribution": 0.1
           },
           {
-            "feature": "feature_9",
+            "feature": "region",
             "value": null,
             "contribution": 0.14
           },
           {
-            "feature": "feature_8",
+            "feature": "loan_amount",
             "value": null,
             "contribution": 0.18
           },
           {
-            "feature": "feature_7",
+            "feature": "number_of_defaults",
             "value": null,
             "contribution": 0.21999999999999997
           },
           {
-            "feature": "feature_6",
+            "feature": "number_of_accounts",
             "value": null,
             "contribution": 0.26
           }
@@ -1883,5 +1889,17 @@
     },
     "timestamp": "2025-11-17T14:32:14.925485",
     "id": "20_1763370134"
+  },
+  {
+    "application_id": 8,
+    "user_id": 5,
+    "prediction": false,
+    "probability": 0.9978230296666107,
+    "model_version": "1.0",
+    "features": {},
+    "admin_override": true,
+    "override_reason": "low credit scsore",
+    "timestamp": "2025-11-18T15:23:55.756704",
+    "id": "8_1763459635"
   }
 ]
