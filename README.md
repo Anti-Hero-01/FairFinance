@@ -1,8 +1,9 @@
-🏦 **FairFinance – Ethical AI for Transparent Banking**
 
 <div align="center">
 
-**FairFinance**
+![logo fairfinance1](https://github.com/user-attachments/assets/74304c3b-763d-4b36-9b63-ee80cc7e2207)
+
+🏦 **FairFinance – Ethical AI for Transparent Banking**
 
 Demo • Features • Architecture • Quick Start • Documentation
 
