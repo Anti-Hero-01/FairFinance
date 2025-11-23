@@ -32,30 +32,12 @@ class VoiceAssistant:
     def get_demo_query(self, audio_data: str) -> str:
         """Generate a demo query based on audio length (for testing without ffmpeg)"""
         try:
-            audio_bytes = base64.b64decode(audio_data)
-            audio_len = len(audio_bytes)
-            
-            # Demo mode: generate queries based on audio length
-            # This allows testing without speech recognition setup
-            demo_queries = [
-                "Why was my loan denied?",
-                "What factors affected my application?",
-                "How can I improve my eligibility?",
-                "Explain my loan decision",
-                "What is my current application status?",
-                "Can you help me understand my credit score?",
-                "What should I do to get better terms?",
-                "Tell me more about the fairness of the decision"
-            ]
-            
-            # Use audio length to pick a demo query
-            query_idx = (audio_len % len(demo_queries))
-            selected_query = demo_queries[query_idx]
-            print(f"[VoiceAssistant] Demo mode: Selected query based on audio length: {selected_query}")
-            return selected_query
+            demo_query = "How can I improve my score?"
+            print(f"[VoiceAssistant] Demo mode: Returning demo query: {demo_query}")
+            return demo_query
         except Exception as e:
             print(f"[VoiceAssistant] Demo mode error: {e}")
-            return "Tell me about my loan decision"
+            return "How can I improve my score?"
     
     def transcribe_audio(self, audio_data: str, language: str = 'en') -> str:
         """Transcribe audio to text with fallback to demo mode"""
@@ -203,7 +185,7 @@ class VoiceAssistant:
                     features = ", ".join([f.get('feature', '') for f in top_neg[:3]])
                     return f"Your application was affected by: {features}."
             
-            return "Your loan decision was based on your financial profile including credit score, income, and debt-to-income ratio."
+            return "Your loan score can be improved by focusing on a few specific financial areas that are impacting your creditworthiness. Here are personalized steps you can take: 1. Reduce Your Debt-to-Income Ratio 2.Improve Your Credit Score 3. Maintain Stable Employment 4. Avoid New Debt 5. Regularly Check Your Credit Report. Implementing these strategies can enhance your financial profile and increase your chances of loan approval."
         
         elif intent == 'improvement':
             return "To improve your loan eligibility, consider increasing your credit score, reducing your debt-to-income ratio, and maintaining a stable employment history."

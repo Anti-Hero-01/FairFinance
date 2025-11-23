@@ -32,21 +32,21 @@ def create_test_users():
     # Test users data
     test_users = [
         # Regular Users (5)
-        {"email": "user1@fairfinance.com", "password": "user123", "full_name": "John Doe", "role": "user"},
+        {"email": "user1@fairfinance.com", "password": "user123", "full_name": "Harsh", "role": "user"},
         {"email": "user2@fairfinance.com", "password": "user123", "full_name": "Jane Smith", "role": "user"},
         {"email": "user3@fairfinance.com", "password": "user123", "full_name": "Bob Johnson", "role": "user"},
         {"email": "user4@fairfinance.com", "password": "user123", "full_name": "Alice Williams", "role": "user"},
         {"email": "user5@fairfinance.com", "password": "user123", "full_name": "Charlie Brown", "role": "user"},
         
         # Admin Users (5)
-        {"email": "admin1@fairfinance.com", "password": "admin123", "full_name": "Admin One", "role": "admin"},
+        {"email": "admin1@fairfinance.com", "password": "admin123", "full_name": "Rajat", "role": "admin"},
         {"email": "admin2@fairfinance.com", "password": "admin123", "full_name": "Admin Two", "role": "admin"},
         {"email": "admin3@fairfinance.com", "password": "admin123", "full_name": "Admin Three", "role": "admin"},
         {"email": "admin4@fairfinance.com", "password": "admin123", "full_name": "Admin Four", "role": "admin"},
         {"email": "admin5@fairfinance.com", "password": "admin123", "full_name": "Admin Five", "role": "admin"},
         
         # Auditor Users (5)
-        {"email": "auditor1@fairfinance.com", "password": "auditor123", "full_name": "Auditor One", "role": "auditor"},
+        {"email": "auditor1@fairfinance.com", "password": "auditor123", "full_name": "Jitesh", "role": "auditor"},
         {"email": "auditor2@fairfinance.com", "password": "auditor123", "full_name": "Auditor Two", "role": "auditor"},
         {"email": "auditor3@fairfinance.com", "password": "auditor123", "full_name": "Auditor Three", "role": "auditor"},
         {"email": "auditor4@fairfinance.com", "password": "auditor123", "full_name": "Auditor Four", "role": "auditor"},
